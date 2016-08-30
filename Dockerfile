@@ -26,14 +26,12 @@ WORKDIR /data
 # RUN git clone --depth 1 --branch $API_CONSOLE_VERSION https://github.com/mulesoft/api-console.git /data \
 
 RUN git clone https://github.com/mulesoft/api-console.git /data \
-        && rm -rf /data/dist/examples    \
-        && rm -rf /data/src              \
-        && rm -rf /data/test             \
-        && rm -rf /data/.git             \
-        && rm -rf /data/.* 2> /dev/null  \
-        && rm     /data/*.*              \
-        && rm     /data/*                \
-        && mkdir  /data/dist/apis
+        && rm -rf /data/dist/examples                           \
+        && rm -rf /data/src                                     \
+        && rm -rf /data/test                                    \
+        && rm -rf /data/.git                                    \
+        && find data -maxdepth 1 -type f -name "*" -delete      \
+        && mkdir  /data/dist/apis 
 
 #
 # install modules and dependencies with NPM and Bower
