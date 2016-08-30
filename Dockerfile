@@ -41,7 +41,7 @@ RUN npm install \
         && bower cache clean --allow-root
 
 
-COPY sample.raml /data/dist/apis/
+COPY simple.raml /data/dist/apis/
 
 ONBUILD ADD . /data/dist/apis/
 
