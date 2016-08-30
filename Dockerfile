@@ -26,13 +26,13 @@ WORKDIR /data
 # RUN git clone --depth 1 --branch $API_CONSOLE_VERSION https://github.com/mulesoft/api-console.git /data \
 
 RUN git clone https://github.com/mulesoft/api-console.git /data \
-        && rm -rf /data/dist/examples \
-        && rm -rf /data/src  \
-        && rm -rf /data/test \
-        && rm -rf /data/.git \
-        && rm -rf /data/.*   \
-        && rm     /data/*.*  \
-        && rm     /data/*    \
+        && rm -rf /data/dist/examples    \
+        && rm -rf /data/src              \
+        && rm -rf /data/test             \
+        && rm -rf /data/.git             \
+        && rm -rf /data/.* 2> /dev/null  \
+        && rm     /data/*.*              \
+        && rm     /data/*                \
         && mkdir  /data/dist/apis
 
 #
