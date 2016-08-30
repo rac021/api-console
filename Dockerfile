@@ -30,7 +30,6 @@ RUN git clone https://github.com/mulesoft/api-console.git /data \
         && rm -rf /data/src                                     \
         && rm -rf /data/test                                    \
         && rm -rf /data/.git                                    \
-        && find   /data -maxdepth 1 -type f -name "*" -delete   \
         && mkdir  /data/dist/apis 
 
 #
