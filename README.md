@@ -8,7 +8,7 @@
 ```
 * **Run**
 
-<ol>  <B> 1. Default</B></ol>
+<ol>  <i> 1. Default</i></ol>
 
 
 ```
@@ -16,7 +16,7 @@
 
 ```
 
-<ol>  <B> 2. Using Simple file</B></ol>
+<ol>  <i> 2. Using Simple file</i></ol>
 
 
 ```
@@ -24,7 +24,7 @@
 
 ```
 
-<ol>  <B> 3. Using Docker Volume</B></ol>
+<ol>  <i> 3. Using Docker Volume</i></ol>
 
 
 ```
@@ -34,14 +34,14 @@
 
 * **Test**
 
-<ol>  <B> 1. Using Simple file</B></ol>
+<ol>  <i> 1. Using Simple file</i></ol>
  
 ```
 ❯    http://localhost:9000/index.html?raml=apis/simple.raml 
 
 ```
 
-<ol>  <B> 1. Using Docker Volume</B></ol>
+<ol>  <i> 1. Using Docker Volume</i></ol>
  
 ```
 ❯    http://localhost:9000/index.html?raml=apis/planes.raml 
