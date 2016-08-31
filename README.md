@@ -61,14 +61,17 @@
 
 # [raml-mockup](https://www.npmjs.com/package/raml-mockup)
 
+```
+❯     raml-mockup simple.raml -p 5000 -w
+
+```  
+
 # [osprey-mock-service](https://github.com/mulesoft-labs/osprey-mock-service)  
 
   Generate an API mock service from a RAML definition using Osprey.
 
 ```
 ❯     osprey-mock-service -f simple.raml -p 8000
-
-      raml-mockup simple.raml -p 5000 -w
       
 ```  
   
