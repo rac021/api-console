@@ -3,7 +3,7 @@
 * **Build Image**
  
 ```
-❯     docker build -t api-console .
+❯    docker build -t api-console .
 
 ```
 * **Run**
@@ -12,7 +12,7 @@
 
 
 ```
-❯     docker build -t api-console .
+❯    docker build -t api-console .
 
 ```
 
@@ -20,7 +20,7 @@
 
 
 ```
-❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+❯    http://localhost:9000/index.html?raml=apis/simple.raml 
 
 ```
 
@@ -28,7 +28,7 @@
 
 
 ```
-❯   docker run --name my-api-console_1 -p 9000:9000 -d -v $(pwd)/raml-files:/data/dist/apis api-console
+❯    docker run --name my-api-console_1 -p 9000:9000 -d -v $(pwd)/raml-files:/data/dist/apis api-console
 
 ```
 
@@ -37,17 +37,16 @@
 <ol>  <B> 1. Using Simple file</B></ol>
  
 ```
-❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+❯    http://localhost:9000/index.html?raml=apis/simple.raml 
 
 ```
 
 <ol>  <B> 1. Using Docker Volume</B></ol>
  
 ```
-❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+❯    http://localhost:9000/index.html?raml=apis/simple.raml 
 
 ```
- 
  
 -------------------------------------------------------------
 
