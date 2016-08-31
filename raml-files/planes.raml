@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: New API
+version: v1
+baseUri: http://192.168.56.1:8000/{version}
+types:
+  TestType:
+    type: object
+    properties:
+      id: number
+      optional?: string
+      expanded:
+        type: object
+        properties:
+          count: number
+/planes:
+  get:
+    description: list planes
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+             [
+              {"Airbus" : "A320" },
+              {"Boeing" : "777" }
+             ]
