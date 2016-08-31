@@ -1,13 +1,54 @@
 # api-console
 
+* Build Image 
+ 
 ```
 ❯     docker build -t api-console .
 
-      docker run --name my-api-console -p 9000:9000 -d api-console
- 
-      http://localhost:9000/index.html?raml=apis/simple.raml 
-      
 ```
+* Run 
+
+<ol>  <B> 1. Default</B></ol>
+
+
+```
+❯     docker build -t api-console .
+
+```
+
+<ol>  <B> 2. Using Simple file</B></ol>
+
+
+```
+❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+
+```
+
+<ol>  <B> 3. Using Docker Volume</B></ol>
+
+
+```
+❯     hdocker run --name my-api-console_1 -p 9000:9000 -d -v $(pwd)/raml-files:/data/dist/apis api-console
+
+```
+
+* Test 
+
+ - Using Simple file : 
+ 
+```
+❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+
+```
+
+ - Using Docker Volume :
+
+
+```
+❯     http://localhost:9000/index.html?raml=apis/simple.raml 
+
+```
+ 
  
 -------------------------------------------------------------
 
@@ -19,6 +60,8 @@
 
 
 -------------------------------------------------------------
+
+# [raml-mockup](https://www.npmjs.com/package/raml-mockup)
 
 # [osprey-mock-service](https://github.com/mulesoft-labs/osprey-mock-service)  
 
