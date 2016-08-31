@@ -44,7 +44,7 @@
 <ol>  <B> 1. Using Docker Volume</B></ol>
  
 ```
-❯    http://localhost:9000/index.html?raml=apis/simple.raml 
+❯    http://localhost:9000/index.html?raml=apis/planes.raml 
 
 ```
  
@@ -66,7 +66,7 @@
   Generate an API mock service from a RAML definition using Osprey.
 
 ```
-❯     osprey-mock-service -f planes.raml -p 8000
+❯     osprey-mock-service -f simple.raml -p 8000
 
 ```  
   
