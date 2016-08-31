@@ -68,6 +68,8 @@
 ```
 ❯     osprey-mock-service -f simple.raml -p 8000
 
+      raml-mockup simple.raml -p 5000 -w
+      
 ```  
   
 
