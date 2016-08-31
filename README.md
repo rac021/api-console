@@ -1,12 +1,12 @@
 # api-console
 
-* Build Image 
+* **Build Image**
  
 ```
 ❯     docker build -t api-console .
 
 ```
-* Run 
+* **Run**
 
 <ol>  <B> 1. Default</B></ol>
 
@@ -28,22 +28,21 @@
 
 
 ```
-❯     hdocker run --name my-api-console_1 -p 9000:9000 -d -v $(pwd)/raml-files:/data/dist/apis api-console
+❯   docker run --name my-api-console_1 -p 9000:9000 -d -v $(pwd)/raml-files:/data/dist/apis api-console
 
 ```
 
-* Test 
+* **Test**
 
- - Using Simple file : 
+<ol>  <B> 1. Using Simple file</B></ol>
  
 ```
 ❯     http://localhost:9000/index.html?raml=apis/simple.raml 
 
 ```
 
- - Using Docker Volume :
-
-
+<ol>  <B> 1. Using Docker Volume</B></ol>
+ 
 ```
 ❯     http://localhost:9000/index.html?raml=apis/simple.raml 
 
