@@ -66,7 +66,7 @@
   Generate an API mock service from a RAML definition using Osprey.
 
 ```
-❯     osprey-mock-service -f simple.raml -p 8000
+❯     osprey-mock-service -f planes.raml -p 8000
 
 ```  
   
