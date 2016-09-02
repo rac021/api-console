@@ -9,7 +9,7 @@
 * **Run**
 
 
-<ol>  <i> 1. Using Simple file</i></ol>
+<ol>  <i> 1. Using Simple file <a href="https://github.com/rac021/api-console/blob/master/simple.raml">simple.raml</a></i></ol>
 
 ```
 ❯    docker run --name my-api-console_1 -p 9000:9000 -d  api-console
@@ -26,7 +26,7 @@
 
 * **Test**
 
-<ol>  <i> 1. Using Simple file </i></ol>
+<ol>  <i> 1. Using Simple file <a href="https://github.com/rac021/api-console/blob/master/simple.raml">simple.raml</a></i></ol>
  
 ```
 ❯    http://localhost:9000/index.html?raml=apis/simple.raml 
