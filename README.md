@@ -8,23 +8,15 @@
 ```
 * **Run**
 
-<ol>  <i> 1. Default</i></ol>
 
-
-```
-❯    docker build -t api-console .
+<ol>  <i> 1. Using Simple file</i></ol>
 
 ```
-
-<ol>  <i> 2. Using Simple file</i></ol>
-
-
-```
-❯    http://localhost:9000/index.html?raml=apis/simple.raml 
+❯    docker run --name my-api-console_1 -p 9000:9000 -d  api-console
 
 ```
 
-<ol>  <i> 3. Using Docker Volume</i></ol>
+<ol>  <i> 2. Using Docker Volume</i></ol>
 
 
 ```
@@ -34,7 +26,7 @@
 
 * **Test**
 
-<ol>  <i> 1. Using Simple file</i></ol>
+<ol>  <i> 1. Using Simple file </i></ol>
  
 ```
 ❯    http://localhost:9000/index.html?raml=apis/simple.raml 
@@ -73,7 +65,7 @@
   Generate an API mock service from a RAML definition using Osprey.
 
 ```
-❯     osprey-mock-service -f simple.raml -p 8000 -w
+❯     osprey-mock-service -f simple.raml -p 8000 -w --cors
       
 ```  
   
