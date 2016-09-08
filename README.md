@@ -33,7 +33,7 @@
 
 ```
 
-<ol>  <i> 1. Using Docker Volume <a href="https://github.com/rac021/api-console/blob/master/raml-files/planes.raml">planes.raml</a> </i></ol>
+<ol>  <i> 2. Using Docker Volume <a href="https://github.com/rac021/api-console/blob/master/raml-files/planes.raml">planes.raml</a> </i></ol>
  
 ```
 ❯    http://localhost:9000/index.html?raml=apis/planes.raml 
