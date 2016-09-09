@@ -1,0 +1,74 @@
+#%RAML 0.8
+title: New API
+version: v1
+baseUri: http://192.168.56.1:8000/{version}
+mediaType: application/json
+documentation:
+  - title: Introduction
+    content: |
+      API to manage the sales and replenishments of stock items and floats in our vending machines.
+schemas:
+ - songg: |
+    {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "songTitle": {
+          "type": "string",
+          "required": true
+        },
+        "machineId": {
+          "type": "string",
+          "required": true,
+          "minLength": 36,
+          "maxLength": 36
+        }
+      }
+    }
+/sales:
+  post:
+    body:
+      application/json:
+       schema: |
+        {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-03/schema",
+          "properties": {
+              "machineId": {"type": "string"},
+              "trayId": { "type": "string", "minLength": 1,"maxLength": 30 }
+          }         
+        }
+       example: |
+         {
+           "machineId" : "ZX4102",
+           "trayId" : "A1"          
+         }
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+           schema: |
+            {
+             "type": "object",
+             "$schema": "http://json-schema.org/draft-03/schema",
+             "required": true,
+             "properties": {
+                "machineId": {
+                  "type": "string",
+                  "required": true
+                },
+                "trayId": {
+                  "type": "string",
+                  "required": true,
+                  "minLength": 1,
+                  "maxLength": 30
+                }
+             }
+            }
+           example: |
+            {
+             "machineId" : "ZX4102",
+             "trayId" : "A1"          
+            }
+
