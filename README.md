@@ -75,7 +75,7 @@
   **Abao** is a command-line tool for testing API documentation written in RAML format.
 
 ```
-❯     
+❯     abao simple.raml --server http://localhost:8000/v1
       
 ```    
 
