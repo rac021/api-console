@@ -51,9 +51,9 @@
 
 -------------------------------------------------------------
 
-# [raml-mockup](https://www.npmjs.com/package/raml-mockup) 
+# [raml-mockup](https://github.com/gextech/raml-mockup) 
 
-  https://github.com/gextech/raml-mockup
+  https://www.npmjs.com/package/raml-mockup
 
 ```
 ❯     raml-mockup simple.raml -p 5000 -w
