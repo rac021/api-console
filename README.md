@@ -51,6 +51,16 @@
 
 -------------------------------------------------------------
 
+
+# [raml2html](https://github.com/raml2html/raml2html) 
+
+  A simple RAML to HTML documentation generator, written for Node.js
+
+```
+❯     raml2html -i simple.raml -o example.html
+
+```  
+
 # [raml-mockup](https://github.com/gextech/raml-mockup) 
 
   https://www.npmjs.com/package/raml-mockup
