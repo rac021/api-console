@@ -1,0 +1,37 @@
+#%RAML 0.8
+title: My API
+version: v1
+#baseUri: http://localhost
+baseUri: http://mocksvc.mulesoft.com/mocks/f30492c5-8c8e-47d5-b310-d44dcfafa05a
+
+traits:
+  - paged:
+      queryParameters: 
+        page: 
+          description: page number
+          type: number        
+  - secured:
+      queryParameters:
+        access_token: 
+          description: The token to get authorized
+          type: string          
+
+/resource:
+  description: A generic resource
+  post:
+    is: [ secured ] 
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              { "status": "ok" }
+  get:
+    is: [secured, paged]
+    responses:
+      200:
+        body:
+          application/json:
+            example: | 
+              [ {"id": 1, "description":"resource instance 1"}, 
+              {"id": 1, "description":"resource instance 1"}]
