@@ -27,3 +27,19 @@ traits:
             example: | 
               [ {"id": 1, "description":"resource instance 1"}, 
               {"id": 2, "description":"resource instance 2"}]
+
+/artists/{name}:
+  get:
+    is: [secured, paged]
+    responses:
+      200:
+        body:
+          schema: artist
+          example: |
+            {
+              "firstName": "John Doe",
+              "birthday": "2014-12-23T15:05:00.000Z",
+              "aliasS": "jaydoe",
+              "age": 5
+
+            }
