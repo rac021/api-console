@@ -4,6 +4,25 @@ version: v1
 
 baseUri: http://localhost:8000/{version}
 
+schemas:
+ - resou: |
+    {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "songTitle": {
+          "type": "string",
+          "required": true
+        },
+        "machineId": {
+          "type": "string",
+          "required": true,
+          "minLength": 36,
+          "maxLength": 36
+        }
+      }
+    }
+    
 traits:
   - paged:
       queryParameters: 
@@ -12,6 +31,7 @@ traits:
           type: number        
   - secured:
       queryParameters:
+
         access_token: 
           description: The token to get authorized
           type: string          
@@ -32,6 +52,7 @@ traits:
       200:
         body:
           application/json:
+            schema: resou
             example: | 
               [ {"id": 1, "description":"resource instance 1"}, 
               {"id": 1, "description":"resource instance 1"}]
