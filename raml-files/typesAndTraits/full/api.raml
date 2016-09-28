@@ -14,10 +14,10 @@ schemas:
           "type": "string",
           "required": true
         },
-        "machineId": {
+        "artistName": {
           "type": "string",
           "required": true,
-          "minLength": 36,
+          "minLength": 3,
           "maxLength": 36
         }
       }
@@ -36,7 +36,7 @@ traits:
           description: The token to get authorized
           type: string          
 
-/resource:
+/song:
   description: A generic resource
   post:
     is: [ secured ] 
@@ -53,6 +53,13 @@ traits:
         body:
           application/json:
             schema: resou
-            example: | 
-              [ {"id": 1, "description":"resource instance 1"}, 
-              {"id": 1, "description":"resource instance 1"}]
+            example: |                            
+             {
+             "songTitle" : "La Neuvième Symphonie",
+             "artistName" : "beethoven"          
+             }
+            
+            # invalidate Schema example
+            # [ {"id": 1, "description":"resource instance 1"}, 
+            #  { "id": 2, "description":"resource instance 2"}]
+            
