@@ -19,7 +19,7 @@ import org.inra.planes.api.resource.PlanesResource.GetPlanesResponse;
  * @author ryahiaoui
  */
 
-@Path("/planez")
+@Path("/planes")
 public class PlanesApi // implements PlanesResource 
 {
 
