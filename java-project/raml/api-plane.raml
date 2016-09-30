@@ -1,0 +1,102 @@
+#%RAML 0.8
+title: Planes
+version: v1
+baseUri: http://localhost:8000/{version}
+
+mediaType: application/json
+
+resourceTypes:
+   - !include ./collections/collection.yaml
+
+traits:
+  - paged: !include traits/paged.raml     
+  - secured: !include traits/secured.raml
+  
+schemas:
+  - planes: !include schema/planes.json
+  - plane: !include schema/plane.json
+
+
+#/plane:
+#  /{id}:
+#    displayName: Plane
+#    uriParameters: 
+#      id:
+#        description: id Plane
+#        type: integer
+#    get:
+#      responses:
+#        200:
+#          body:
+#            application/json:
+#              schema: plane
+#              example: |               
+#               { "Model": "Boeing 737", 
+#                  "Engines": 2,
+#                  "Type": "Short range, narrow body jet",
+#                  "Seats": 189 ,
+#                  "Speed-miles-ph": 560,
+#                  "Altitude-feet": 41000
+#               }
+
+
+/planes:
+  type: { collection }  
+  get:
+    is: [ paged ]
+    responses:
+      200:
+        body:
+          application/json:
+            schema: planes
+            example: |
+               [   
+                  { "Model": "Boeing 737",  
+                    "Engines": 2,
+                    "Type": "Short range, narrow body jet",
+                    "Seats": 189 ,
+                    "Speed-miles-ph": 560,
+                    "Altitude-feet": 41000
+                  },
+                  { "Model": "Boeing 757",  
+                    "Engines": 2,
+                    "Type": "Medium range, narrow body jet" ,
+                    "Seats": 289,
+                    "Speed-miles-ph": 550,
+                    "Altitude-feet": 42000
+                  },
+                  { "Model": "Boeing 777",
+                    "Engines": 2,
+                    "Type": "Long range, wide body jet",
+                    "Seats": 477,
+                    "Speed-miles-ph": 560,
+                    "Altitude-feet": 41000
+                  },
+                  { "Model": "Airbus A340",
+                    "Engines": 4,
+                    "Type": "Long range, wide body jet",
+                    "Seats": 400 ,
+                    "Speed-miles-ph": 560,
+                    "Altitude-feet": 41000
+                  }
+               ]
+  /{id}:
+    displayName: Plane
+    uriParameters: 
+      id:
+        description: id Plane
+        type: integer
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              schema: plane
+              example: |               
+               { "Model": "Boeing 737", 
+                  "Engines": 2,
+                  "Type": "Short range, narrow body jet",
+                  "Seats": 189 ,
+                  "Speed-miles-ph": 560,
+                  "Altitude-feet": 41000
+               }
