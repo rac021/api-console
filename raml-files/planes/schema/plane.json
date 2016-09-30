@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "Model": {
+      "type": "string",
+       "maxLength": 50
+    },
+    "Engines": {
+      "type": "number",
+      "maximum": 5
+    },
+    "Type": {
+      "type": "string", 
+      "maxLength": 50
+    },
+    "Seats": {
+      "type": "number",
+      "minimum": 2,
+      "mamaximum": 10000
+    },
+    "Speed-miles-ph": {
+      "type": "number",
+      "maximum": 800
+    }
+    ,
+    "Altitude-feet": {
+      "type": "number",
+      "maximum": 60000
+    }
+  },
+  "required": ["Model", "Engines", "Type", "Seats" ]
+}
