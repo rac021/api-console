@@ -1,0 +1,27 @@
+collection:
+     usage: Apply this resourceType to a collection resource and redefine the methods which you wish to inherit.
+     description: |
+       This resourceType defines the GET, POST, DELETE methods and their responses for a collection resource.
+     get:
+       description: Retrieves a list of all in the collection.
+       responses:
+       
+          200:
+           description: Resource successfully retrieved.
+           body:
+             application/json:
+                schema: <<resourcePathName>>
+                
+          500:
+           description: |
+             Some server side error occurred.
+           body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
