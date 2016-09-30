@@ -1,0 +1,144 @@
+###############################################################################
+# ----------
+# DISCLAIMER
+# ----------
+# THE HARDWARE, SOFTWARE, SOURCE CODE AND SAP MATERIALS AS PROVIDED BY SAP FOR YOU UNDER THIS AGREEMENT ARE PROVIDED "AS-IS" WITHOUT ANY WARRANTY OF ANY KIND.
+# THE HARDWARE, SOFTWARE, SOURCE CODE AND SAP MATERIALS ARE LICENSED TO LICENSEE "AS IS", WITHOUT ANY WARRANTY, ESCROW, TRAINING, MAINTENANCE, OR SERVICE OBLIGATIONS WHATSOEVER ON THE PART OF SAP.  
+# SAP MAKES NO EXPRESS OR IMPLIED WARRANTIES OF ANY TYPE WHATSOEVER, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND OF FITNESS FOR A PARTICULAR PURPOSE.  
+# YOU ASSUME ALL RISKS ASSOCIATED WITH ITS USE OF THE HARDWARE, SOFTWARE, SAP MATERIALS, INCLUDING WITHOUT LIMITATION RISKS RELATING TO QUALITY, PERFORMANCE, DATA LOSS, AND UTILITY IN A PRODUCTION ENVIRONMENT.  
+# IN NO EVENT SHALL SAP BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR ANY DAMAGES ARISING IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE HARDWARE, SOFTWARE, SOURCE CODE AND SAP MATERIALS IN CONNECTION WITH SAP'S PROVISION OF OR FAILURE TO PROVIDE SERVICES PERTAINING TO THE HARDWARE, SOFTWARE, SOURCE CODE OR SAP MATERIALS, OR AS A RESULT OF ANY DEFECT IN THE HARDWARE, SOFTWARE, SOURCE CODE OR SAP MATERIALS.  
+# THIS DISCLAIMER OF LIABILITY SHALL APPLY REGARDLESS OF THE FORM OF ACTION THAT MAY BE BROUGHT AGAINST SAP, WHETHER IN CONTRACT OR TORT, INCLUDING WITHOUT LIMITATION ANY ACTION FOR NEGLIGENCE.
+#
+# -------------
+# DOCUMENTATION
+# -------------
+# This is a resource type that can be applied to a collection resource, for example "products".
+# When applying this resource type, your collection resource will inherit the HTTP methods and response codes defined below.
+# The HTTP GET method is mandatory while the POST and DELETE methods are optional to inherit.
+#
+# ->  Import it like this:
+#
+# resourceTypes: 
+#   - !include https://api.yaas.io/patterns/v1/resource-type-collection.yaml
+#
+# * WARNING
+# This pattern assumes that in your RAML you have defined schemas whose names matche both the resource name and the  
+# the singularized resource name. For example, if your resource's path is "/items" schemas with the names "items" 
+# and "item" are required. These schemas will be used for the methods' request/response bodies.   
+# 
+# -> Contract:
+# A typical collection should provide the POST, GET and DELETE method.
+# The resource type should be customizable, GET is mandatory while POST and DELETE methods should be optional.
+#
+# -> Use it like this:
+#
+# /items
+#   type: collection
+#
+# To inherit the POST and/or DELETE methods from the trait you need to specifically include each one of them. All responses will be inherited.
+# Defining the GET method is not mandatory but it will also not harm. By redefining a method you can also extend their configuration or override parts of it.
+# /items
+#   type: collection
+#   get:
+#   post:
+#
+###############################################################################
+
+collection:
+     usage: Apply this resourceType to a collection resource and redefine the methods which you wish to inherit.
+     description: |
+       This resourceType defines the GET, POST, DELETE methods and their responses for a collection resource.
+     get:
+       description: Retrieves a list of all <<resourcePathName>> in the collection.
+       responses:
+          200:
+           description: Resource successfully retrieved.
+           body:
+             application/json:
+               schema: <<resourcePathName>>
+          500:
+           description: |
+             Some server side error occurred.
+           body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
+     post?:         
+       description: Creates a new <<resourcePathName | !singularize>>.
+       body:
+         application/json:
+           schema: <<resourcePathName | !singularize>>
+       responses :
+          201 :
+            description : |
+              The collection resource has been successfully created.
+            headers:
+              Location:
+                description : |
+                  The Location of the new resource which was created by the request.
+                  The value consists of a single absolute URI.
+                example: http://www.hybris.com/items/myItem
+                required : true
+          400:
+            description: Request syntactically incorrect. Any details will be provided within the response payload.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 400,
+                    "message": "The request payload has incorrect syntax.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "bad_payload_syntax"
+                  }
+          409:
+            description: |
+              Creation failed because there was a conflict with another resource. Any details will be provided within the response payload.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 409,
+                    "message": "The requested resource could not be created due to server-side validation.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "conflict_resource"
+                  }
+          500:
+            description: |
+              Some server side error occurred.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
+     delete?:
+       description: Deletes all <<resourcePathName>>.
+       responses :
+          204:
+            description : |
+              The collection resource has been successfully deleted.
+          500:
+            description: |
+              Some server side error occurred.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
