@@ -38,6 +38,7 @@
 ```
 ❯    http://localhost:9000/index.html?raml=apis/planes.raml 
 
+     http://localhost:9000/index.html?raml=apis/planes/api-plane.raml
 ```
  
 -------------------------------------------------------------
