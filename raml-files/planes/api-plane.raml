@@ -8,11 +8,15 @@ mediaType: application/json
 resourceTypes:
    - !include collections/collection.yaml
 
+traits:
+  - paged: !include traits/paged.raml     
+  - secured: !include traits/secured.raml
+  
 schemas:
   - planes: !include schema/planes.json
   - plane: !include schema/plane.json
 
-  
+
 #/plane:
 #  /{id}:
 #    displayName: Plane
@@ -39,6 +43,7 @@ schemas:
 /planes:
   type: { collection }  
   get:
+    is: [ paged ]
     responses:
       200:
         body:
