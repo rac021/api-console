@@ -25,3 +25,77 @@ collection:
                     "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
                     "type": "internal_service_error"
                   }
+
+     post?:         
+       description: Creates a new <<resourcePathName | !singularize>>.
+       body:
+         application/json:
+           schema: <<resourcePathName | !singularize>>
+       responses :
+          201 :
+            description : |
+              The collection resource has been successfully created.
+            headers:
+              Location:
+                description : |
+                  The Location of the new resource which was created by the request.
+                  The value consists of a single absolute URI.
+                example: http://www.hybris.com/items/myItem
+                required : true
+          400:
+            description: Request syntactically incorrect. Any details will be provided within the response payload.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 400,
+                    "message": "The request payload has incorrect syntax.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "bad_payload_syntax"
+                  }
+          409:
+            description: |
+              Creation failed because there was a conflict with another resource. Any details will be provided within the response payload.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 409,
+                    "message": "The requested resource could not be created due to server-side validation.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "conflict_resource"
+                  }
+          500:
+            description: |
+              Some server side error occurred.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
+     delete?:
+       description: Deletes all <<resourcePathName>>.
+       responses :
+          204:
+            description : |
+              The collection resource has been successfully deleted.
+          500:
+            description: |
+              Some server side error occurred.
+            body:
+              application/json:
+                schema: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+                example: |
+                  {
+                    "status": 500,
+                    "message": "Something went wrong while processing the request. Please contact the administrator.",
+                    "moreInfo": "https://api.yaas.io/patterns/errortypes.html",
+                    "type": "internal_service_error"
+                  }
