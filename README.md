@@ -17,8 +17,15 @@
 
 -------------------------------------------------------------------
 
-## [RAML-SPEC](https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md)
+### [Definition of Spec Driven Development](https://www.mikestowe.com/blog/2014/11/what-is-spec-driven-development.php)
 
+Spec Driven Development consists on creating concise spec that can be used to describe your application’s interactions in a pragmatic way... [ more ](https://www.mikestowe.com/blog/2014/11/what-is-spec-driven-development.php)
+
+## [RAML-SPEC ](https://github.com/raml-org/raml-spec/tree/master/versions)
+
+Restful API Modeling Language
+
+RAML™ is a YAML-based language that describes RESTful APIs. Together with the YAML specification, this specification provides all the information necessary to describe RESTful APIs; to create API client-code and API server-code generators; and to create API user documentation from RAML API definitions... [ more ](https://github.com/raml-org/raml-spec/tree/master/versions)
 
 -------------------------------------------------------------------
 
