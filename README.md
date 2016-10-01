@@ -1,4 +1,41 @@
-# api-console
+
+#RAML
+
+![sdd](https://cloud.githubusercontent.com/assets/7684497/18411385/a57107c0-7776-11e6-9aac-942499f7055b.png)
+
+-------------------------------------------------------------------
+
+## [RAML-SPEC](https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md)
+
+
+-------------------------------------------------------------------
+
+![raml](https://cloud.githubusercontent.com/assets/7684497/18411352/0aa64a20-7776-11e6-8567-ffb51f2c163f.png)
+
+
+# Writing Spec (  creating RAML files ) :
+
+
+## [api-designer](https://github.com/mulesoft/api-designer)
+
+ 
+```
+❯    npm install -g api-designer
+
+    api-designer
+    
+```
+  
+## [Atom + api-workbench](https://atom.io/packages/api-workbench)
+
+
+![atome_api-workench](https://cloud.githubusercontent.com/assets/7684497/18092803/07ad9fea-6ece-11e6-8704-bba0cfed66cb.png)
+
+-------------------------------------------------------------
+
+# Generate documentation : 
+
+# [api-console](https://github.com/mulesoft/api-console)
 
 * **Build Image**
  
@@ -39,19 +76,8 @@
 ❯    http://localhost:9000/index.html?raml=apis/planes.raml 
 
      http://localhost:9000/index.html?raml=apis/planes/api-plane.raml
+
 ```
- 
--------------------------------------------------------------
-
-# [Atom + api-workbench](https://atom.io/packages/api-workbench)
-
-### For creating RAML files
-
-![atome_api-workench](https://cloud.githubusercontent.com/assets/7684497/18092803/07ad9fea-6ece-11e6-8704-bba0cfed66cb.png)
-
-
--------------------------------------------------------------
-
 
 # [raml2html](https://github.com/raml2html/raml2html) 
 
@@ -59,17 +85,13 @@
 
 ```
 ❯     raml2html -i simple.raml -o example.html
-
+      raml2html -i raml-files/planes/api-plane.raml -o api-plane-doc.html
+      
 ```  
 
-# [raml-mockup](https://github.com/gextech/raml-mockup) 
 
-  https://www.npmjs.com/package/raml-mockup
+# Simulate API
 
-```
-❯     raml-mockup simple.raml -p 5000 -w
-
-```  
 
 # [osprey-mock-service](https://github.com/mulesoft-labs/osprey-mock-service)  
 
@@ -77,9 +99,11 @@
 
 ```
 ❯     osprey-mock-service -f simple.raml -p 8000 --cors
+
+      osprey-mock-service -f raml-files/planes/api-plane.raml -p 8000 --cors
       
 ```  
-
+# Validate Spec
 
 # [abao](https://github.com/cybertk/abao)  
 
@@ -88,7 +112,24 @@
 ```
 ❯     abao simple.raml --server http://localhost:8000/v1
       
+      abao raml-files/planes/api-plane.raml --server http://localhost:8000/v1
+      
 ```    
+ 
+
+# [raml-mockup](https://github.com/gextech/raml-mockup) ( BONUS )
+
+  https://www.npmjs.com/package/raml-mockup
+
+```
+❯     raml-mockup simple.raml -p 5000 -w
+
+     raml-mockup raml-files/planes/api-plane.raml -p 5000 -w
+
+```  
+#BUILD
+
+## JAVA
 
 # [Maven Plugin ( raml for jax-rs )](https://github.com/mulesoft/raml-for-jax-rs/blob/master/maven-plugin.md)  
 
@@ -168,3 +209,66 @@
 
 
 ```    
+
+## Deploy webService using maven project including RAML to JAX-RS plugin
+
+
+```
+   http://localhost:8080/raml-planes-api/resources/planez
+
+   http://localhost:8080/raml-planes-api/resources/planez/10
+
+```
+
+
+## PHP - CLI
+
+[RAML PHP Client Generator](https://github.com/jays-de/raml-php-generator)
+
+```
+
+<?php
+
+namespace SampleApi;
+
+require_once "vendor/autoload.php" ;
+
+const TEMPLATE_REGEXP = '/{([^{}]+)}/';
+
+use GuzzleHttp\Psr7\Request; use GuzzleHttp\Client as HttpClient;
+
+$options = [
+'baseUri' => 'http://localhost:8080/raml-planes-api/resources/planes' ] ;
+
+$client = new Client($options);
+
+$planes = $client->resources->planes->get(null, $options)->getBody() ;
+
+$planeByID = $client->resources->planes->id(10)->get(null, $options)->getBody() ;
+
+echo "\n" ;
+echo " All Planes : ----------------------------- " ;
+echo "\n \n" ;
+echo "  $planes " ;
+echo "\n \n" ;
+echo " Plane by ID : ----------------------------- " ;
+echo "\n \n " ;
+echo "  $planeByID " ;
+echo "\n \n" ;
+echo " ------------------------------------------ " ;
+
+?>
+
+
+```
+
+## Features :
+
+# [RAML-Merge](https://github.com/mikestowe/php-ramlMerge)
+
+RAML Merge lets you merge in any included RAML files (!include) into a single RAML file via the command line.
+
+```
+❯     php ramlMerge.php raml-files/planes/api-plane.raml > api-plane-full.raml
+
+```
