@@ -176,6 +176,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
 ```
 ❯     raml2html -i simple.raml -o example.html
+
       raml2html -i raml-files/planes/api-plane.raml -o api-plane-doc.html
       
 ```  
