@@ -323,33 +323,33 @@ CLI example generated for [api-plane.raml](https://github.com/rac021/raml/blob/m
 
 <?php
 
-namespace SampleApi;
+namespace SampleApi                     ;
 
-require_once "vendor/autoload.php" ;
+require_once "vendor/autoload.php"      ;
 
-const TEMPLATE_REGEXP = '/{([^{}]+)}/';
+const TEMPLATE_REGEXP = '/{([^{}]+)}/'  ;
 
-use GuzzleHttp\Psr7\Request; use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Psr7\Request; use GuzzleHttp\Client as HttpClient        ;
 
 $options = [
 'baseUri' => 'http://localhost:8080/raml-planes-api/resources/planes' ] ;
 
-$client = new Client($options);
+$client = new Client($options)                                          ;
 
-$planes = $client->resources->planes->get(null, $options)->getBody() ;
+$planes = $client->resources->planes->get(null, $options)->getBody()    ;
 
 $planeByID = $client->resources->planes->id(10)->get(null, $options)->getBody() ;
 
-echo "\n" ;
-echo " All Planes : ----------------------------- " ;
-echo "\n \n" ;
-echo "  $planes " ;
-echo "\n \n" ;
-echo " Plane by ID : ----------------------------- " ;
-echo "\n \n " ;
-echo "  $planeByID " ;
-echo "\n \n" ;
-echo " ------------------------------------------ " ;
+echo "\n"                                                  ;
+echo " All Planes : ----------------------------- "        ;
+echo "\n \n"                                               ;
+echo "  $planes "                                          ;
+echo "\n \n"                                               ;
+echo " Plane by ID : ----------------------------- "       ;
+echo "\n \n "                                              ;
+echo "  $planeByID "                                       ;
+echo "\n \n"                                               ;
+echo " ------------------------------------------ "        ;
 
 ?>
 
