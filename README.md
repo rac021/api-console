@@ -355,6 +355,13 @@ echo " ------------------------------------------ "        ;
 
 ```
 
+# [Microrest.php](https://github.com/marmelab/microrest.php)
+
+Microrest is a Silex provider to setting up a REST API on top of a relational database, based on a 
+YAML (RAML) configuration file... [more](http://marmelab.com/blog/2015/01/05/introducing-microrest-raml-api-in-silex.html)
+
+-----------------------------------------------------------
+
 ## Features :
 
 # [RAML-Merge](https://github.com/mikestowe/php-ramlMerge)
