@@ -36,7 +36,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 ![raml](https://cloud.githubusercontent.com/assets/7684497/18411352/0aa64a20-7776-11e6-8567-ffb51f2c163f.png)
 
 
-# Writing Spec (  creating RAML files ) :
+# 1) Writing Spec (  creating RAML files ) :
 
 
 ## [api-designer](https://github.com/mulesoft/api-designer)
@@ -56,7 +56,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
 -------------------------------------------------------------
 
-# Generate documentation : 
+# 2) Generate documentation : 
 
 # [api-console](https://github.com/mulesoft/api-console)
 
@@ -113,7 +113,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 ```  
 
 
-# Simulate API
+# 3) Simulate API
 
 
 # [osprey-mock-service](https://github.com/mulesoft-labs/osprey-mock-service)  
@@ -126,7 +126,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
       osprey-mock-service -f raml-files/planes/api-plane.raml -p 8000 --cors
       
 ```  
-# Validate Spec
+# 4) Validate Spec
 
 # [abao](https://github.com/cybertk/abao)  
 
@@ -150,7 +150,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
      raml-mockup raml-files/planes/api-plane.raml -p 5000 -w
 
 ```  
-#BUILD
+# 5) BUILD
 
 ## JAVA
 
