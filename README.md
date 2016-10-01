@@ -1,4 +1,10 @@
 
+# Software development life cycle ( SDLC )
+
+![development_lifecycle](https://cloud.githubusercontent.com/assets/7684497/19013548/3ad9feb2-87d4-11e6-87e5-a82360c34e79.jpg)
+
+-------------------------------------------------------------------
+
 #RAML
 
 ![sdd](https://cloud.githubusercontent.com/assets/7684497/18411385/a57107c0-7776-11e6-9aac-942499f7055b.png)
