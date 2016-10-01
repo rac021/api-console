@@ -31,6 +31,77 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
    http://raml.org/developers/raml-200-tutorial
 
+```
+/songs:
+  description: Collection of available songs in Jukebox
+  get:
+    description: Get a list of songs based on the song title.
+    queryParameters:
+      songTitle:
+        description: "The title of the song to search "
+        required: true
+        minLength: 3
+        type: string
+        example: "Get L"
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              "songs": [
+                  {
+                    "songId": "550e8400-e29b-41d4-a716-446655440000",
+                    "songTitle": "Get Lucky"
+                  },
+                  {
+                    "songId": "550e8400-e29b-41d4-a716-446655440111",
+                    "songTitle": "Loose yourself to dance"
+                  },
+                  {
+                    "songId": "550e8400-e29b-41d4-a716-446655440222",
+                    "songTitle": "Gio sorgio by Moroder"
+                  }
+                  ]
+  /{songId}:
+    description: Song entity
+    get:
+      description: Get the song with `songId = {songId}`
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "songId": "550e8400-e29b-41d4-a716-446655440000",
+                  "songTitle": "Get Lucky",
+                  "duration": "6:07",
+                  "artist": {
+                    "artistId": "110e8300-e32b-41d4-a716-664400445500"
+                    "artistName": "Daft Punk",
+                    "imageURL": "http://travelhymns.com/random-access-memories1.jpg"
+                  },
+                  "album": {
+                    "albumId": "183100e3-0e2b-4404-a716-66104d440550",
+                    "albumName": "Random Access Memories",
+                    "imageURL": "http://upload.wikimedia.org/Random_Access_Memories.jpg"
+                  }
+                }
+        404:
+          body:
+            application/json:
+              example: |
+                {"message": "Song not found"}
+    /file-content:
+      description: The file to be reproduced by the client
+      get:
+        description: Get the file content
+        responses:
+          200:
+      post:
+  post:
+  
+```
+
 -------------------------------------------------------------------
 
 ![raml](https://cloud.githubusercontent.com/assets/7684497/18411352/0aa64a20-7776-11e6-8567-ffb51f2c163f.png)
