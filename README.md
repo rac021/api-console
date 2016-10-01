@@ -27,6 +27,12 @@ Restful API Modeling Language
 
 RAML™ is a YAML-based language that describes RESTful APIs. Together with the YAML specification, this specification provides all the information necessary to describe RESTful APIs; to create API client-code and API server-code generators; and to create API user documentation from RAML API definitions... [ more ](https://github.com/raml-org/raml-spec/tree/master/versions)
 
+-------------------------------------------------------------------
+
+![raml](https://cloud.githubusercontent.com/assets/7684497/18411352/0aa64a20-7776-11e6-8567-ffb51f2c163f.png)
+
+-------------------------------------------------------------------
+
 ## [RAML- Tutorial](http://raml.org/developers/raml-200-tutorial)
 
    http://raml.org/developers/raml-200-tutorial
@@ -103,9 +109,6 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 ```
 
 -------------------------------------------------------------------
-
-![raml](https://cloud.githubusercontent.com/assets/7684497/18411352/0aa64a20-7776-11e6-8567-ffb51f2c163f.png)
-
 
 # 1) Writing Spec (  creating RAML files ) :
 
