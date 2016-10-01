@@ -39,7 +39,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
  
 ```
-❯    npm install -g api-designer
+❯   npm install -g api-designer
 
     api-designer
     
