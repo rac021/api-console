@@ -128,7 +128,7 @@
   https://www.npmjs.com/package/raml-mockup
 
 ```
-❯     raml-mockup simple.raml -p 5000 -w
+❯    raml-mockup simple.raml -p 5000 -w
 
      raml-mockup raml-files/planes/api-plane.raml -p 5000 -w
 
