@@ -145,8 +145,14 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
 ```
 ❯    docker run --name my-api-console_1 -p 9000:9000 -d  api-console
+     
+```
 
 ```
+❯    http://localhost:9000/index.html?raml=apis/simple.raml 
+     
+```
+
 
 <ol>  <i> 2. Using Docker Volume</i></ol>
 
@@ -156,17 +162,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
 ```
 
-* **Test**
 
-<ol>  <i> 1. Using Simple file <a href="https://github.com/rac021/api-console/blob/master/simple.raml">simple.raml</a></i></ol>
- 
-```
-❯    http://localhost:9000/index.html?raml=apis/simple.raml 
-
-```
-
-<ol>  <i> 2. Using Docker Volume <a href="https://github.com/rac021/api-console/blob/master/raml-files/planes.raml">planes.raml</a> </i></ol>
- 
 ```
 ❯    http://localhost:9000/index.html?raml=apis/planes.raml 
 
