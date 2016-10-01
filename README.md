@@ -221,9 +221,11 @@
 ```
 
 
-## PHP - CLI
+## PHP - CLI 
 
-[RAML PHP Client Generator](https://github.com/jays-de/raml-php-generator)
+### [RAML PHP Client Generator](https://github.com/jays-de/raml-php-generator)
+
+CLI example generated for [api-plane.raml](https://github.com/rac021/raml/blob/master/raml-files/planes/api-plane.raml)
 
 ```
 
@@ -258,7 +260,6 @@ echo "\n \n" ;
 echo " ------------------------------------------ " ;
 
 ?>
-
 
 ```
 
