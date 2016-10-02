@@ -5,6 +5,34 @@
 
 -------------------------------------------------------------------
 
+## REST- API
+
+```
+
+ Resource               /planes:
+  
+ Verbes                   get:
+                          put:
+
+      
+ Identifiant             /planes/{id}:
+                           get:
+                           put:
+
+    
+ Résultat                responses:
+                          200:
+                            body:
+                              application/json:
+                                example: |
+                                  {
+                                    "B-777" : "Hello World"
+                                  }
+
+```
+
+-------------------------------------------------------------------
+
 # REST API Interface complexity
 
 ![rest-api](https://cloud.githubusercontent.com/assets/7684497/19013725/5b7d8d1e-87d9-11e6-864c-d5314a229b68.jpg)
