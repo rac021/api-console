@@ -16,7 +16,6 @@
                           put:
                           patch:
                           delete:
-
       
  Identifiant             /planes/{id}:
                            get:
@@ -24,7 +23,6 @@
                            put:
                            patch:
                            delete:
-
     
  Résultat                responses:
                           200:
