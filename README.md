@@ -11,13 +11,7 @@
 
 -------------------------------------------------------------------
 
-#RAML
-
-![sdd](https://cloud.githubusercontent.com/assets/7684497/18411385/a57107c0-7776-11e6-9aac-942499f7055b.png)
-
--------------------------------------------------------------------
-
-### [Definition of Spec Driven Development](https://www.mikestowe.com/blog/2014/11/what-is-spec-driven-development.php)
+## [Spec Driven Development](https://www.mikestowe.com/blog/2014/11/what-is-spec-driven-development.php)
 
 Spec Driven Development consists on creating concise spec that can be used to describe your application’s interactions in a pragmatic way... [ more ](https://www.mikestowe.com/blog/2014/11/what-is-spec-driven-development.php)
 
@@ -28,6 +22,13 @@ Spec Driven Development consists on creating concise spec that can be used to de
    * Documentation managed as source code
 
    * Human readable docmentation
+
+
+-------------------------------------------------------------------
+
+#RAML
+
+![sdd](https://cloud.githubusercontent.com/assets/7684497/18411385/a57107c0-7776-11e6-9aac-942499f7055b.png)
 
 ## [RAML-SPEC ](https://github.com/raml-org/raml-spec/tree/master/versions)
 
