@@ -399,3 +399,17 @@ RAML Merge lets you merge in any included RAML files (!include) into a single RA
 ❯     php ramlMerge.php raml-files/planes/api-plane.raml > api-plane-full.raml
 
 ```
+
+## [RAML - SWAGGER : Pros and Cons](http://nordicapis.com/top-specification-formats-for-rest-apis/)
+
+    * Swagger
+
+       - Pros: Heavily adopted, large community of users and supporters, support multiple languages
+       - Cons: Lacks advanced constructs for metadata
+    
+    * RAML
+
+       - Pros: Supports advanced constructs, decent adoption, human readable format, high industry backing
+       - Cons: Lacks code-level tooling, still unproven long-term
+       
+       
