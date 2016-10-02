@@ -220,9 +220,9 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
      ----------------------------------------------------------------------
      
-     abao raml-files/planes/api-plane.raml --server http://localhost:8000
-    
      raml-mockup raml-files/planes/api-plane.raml -p 8000 -w
+     
+     abao raml-files/planes/api-plane.raml --server http://localhost:8000
      
      ----------------------------------------------------------------------
      
