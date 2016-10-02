@@ -250,7 +250,7 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 ```    
  
 
-# [raml-mockup](https://github.com/gextech/raml-mockup) ( BONUS )
+# [raml-mockup](https://github.com/gextech/raml-mockup) Validate Spec + Mock service ( BONUS )
 
   https://www.npmjs.com/package/raml-mockup
 
