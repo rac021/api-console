@@ -12,12 +12,18 @@
  Resource               /planes:
   
  Verbes                   get:
+                          post:
                           put:
+                          patch:
+                          delete:
 
       
  Identifiant             /planes/{id}:
                            get:
+                           post:
                            put:
+                           patch:
+                           delete:
 
     
  Résultat                responses:
