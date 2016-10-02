@@ -400,6 +400,8 @@ RAML Merge lets you merge in any included RAML files (!include) into a single RA
 
 ```
 
+-------------------------------------------------------------------
+
 ## [RAML - SWAGGER : Pros and Cons](http://nordicapis.com/top-specification-formats-for-rest-apis)
 
     * Swagger
