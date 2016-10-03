@@ -19,7 +19,7 @@
         "Seats": {
         "type": "number",
         "minimum": 2,
-        "mamaximum": 10000
+        "maximum": 10000
         },
         "Speed-miles-ph": {
         "type": "number",
