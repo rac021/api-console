@@ -356,9 +356,9 @@ RAML™ is a YAML-based language that describes RESTful APIs. Together with the 
 
 
 ```
-   http://localhost:8080/raml-planes-api/resources/planez
+   http://localhost:8080/raml-planes-api/resources/planes
 
-   http://localhost:8080/raml-planes-api/resources/planez/10
+   http://localhost:8080/raml-planes-api/resources/planes/10
 
 ```
 
